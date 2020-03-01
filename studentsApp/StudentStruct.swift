@@ -7,9 +7,13 @@
 //
 
 import Foundation
-
+enum Gender {
+    case m
+    case f
+    case other
+}
 struct Student {
     var name : String
     var surname: String
-    var gender: String
+    var gender: Gender
 }

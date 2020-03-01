@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5600414F2402AA9D00872AE2 /* names.html in Resources */ = {isa = PBXBuildFile; fileRef = 5600414E2402AA9D00872AE2 /* names.html */; };
+		5662679124071901005AE0B9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5662679024071901005AE0B9 /* ProfileViewController.swift */; };
+		5662679324090680005AE0B9 /* StudentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5662679224090680005AE0B9 /* StudentData.swift */; };
 		56E7064923FBD35100D6CF1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E7064823FBD35100D6CF1A /* AppDelegate.swift */; };
 		56E7064B23FBD35100D6CF1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E7064A23FBD35100D6CF1A /* SceneDelegate.swift */; };
 		56E7065023FBD35100D6CF1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E7064E23FBD35100D6CF1A /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		5600414E2402AA9D00872AE2 /* names.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = names.html; sourceTree = "<group>"; };
+		5662679024071901005AE0B9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5662679224090680005AE0B9 /* StudentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentData.swift; sourceTree = "<group>"; };
 		56E7064523FBD35100D6CF1A /* studentsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = studentsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E7064823FBD35100D6CF1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56E7064A23FBD35100D6CF1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +78,9 @@
 			children = (
 				5600414E2402AA9D00872AE2 /* names.html */,
 				56E7064823FBD35100D6CF1A /* AppDelegate.swift */,
+				5662679024071901005AE0B9 /* ProfileViewController.swift */,
 				56E7066223FC4E2600D6CF1A /* StudentStruct.swift */,
+				5662679224090680005AE0B9 /* StudentData.swift */,
 				56E7064A23FBD35100D6CF1A /* SceneDelegate.swift */,
 				56E7066423FC4EB900D6CF1A /* StudentsViewController.swift */,
 				56E7065E23FBD55C00D6CF1A /* MenueViewController.swift */,
@@ -166,9 +172,11 @@
 			files = (
 				56E7066723FC59BD00D6CF1A /* CodeTableViewCell.swift in Sources */,
 				56E7065D23FBD3A900D6CF1A /* AuthorizationViewController.swift in Sources */,
+				5662679124071901005AE0B9 /* ProfileViewController.swift in Sources */,
 				56E7066A23FC5CD100D6CF1A /* XIBTableViewCell.swift in Sources */,
 				56E7065F23FBD55C00D6CF1A /* MenueViewController.swift in Sources */,
 				56E7064923FBD35100D6CF1A /* AppDelegate.swift in Sources */,
+				5662679324090680005AE0B9 /* StudentData.swift in Sources */,
 				56E7066123FBD77E00D6CF1A /* StudentsTableViewController.swift in Sources */,
 				56E7066323FC4E2600D6CF1A /* StudentStruct.swift in Sources */,
 				56E7066523FC4EB900D6CF1A /* StudentsViewController.swift in Sources */,
