@@ -5,7 +5,9 @@
 //  Created by Andrei Apekunou on 2/18/20.
 //  Copyright © 2020 Andrei Apekunou. All rights reserved.
 //
-
+//swiftlint:disable trailing_whitespace
+//swiftlint:disable vertical_whitespace
+//swiftlint:disable opening_brace
 import UIKit
 
 class XIBTableViewCell: UITableViewCell {

@@ -5,7 +5,11 @@
 //  Created by Andrei Apekunou on 2/28/20.
 //  Copyright © 2020 Andrei Apekunou. All rights reserved.
 //
-
+//swiftlint:disable trailing_whitespace
+//swiftlint:disable vertical_whitespace
+//swiftlint:disable opening_brace
+//swiftlint:disable trailing_whitespace
+//swiftlint:disable tatement_position
 import Foundation
 import UIKit
 
@@ -39,9 +43,9 @@ class StudentData: NSObject, UITableViewDataSource{
                       switch splittedStudentData[2]
                       {
                       case "m":
-                        gender = .m
+                        gender = .male
                       case "f":
-                        gender = .f
+                        gender = .femail
                       default:
                         gender = .other
                     }
@@ -105,12 +109,12 @@ extension StudentData{
             
             switch students[indexPath.row].gender {
                 
-            case .m:
+            case .male:
             studentCell = tableView.dequeueReusableCell(withIdentifier: CodeTableViewCell.id, for: indexPath)
             
             studentCell.textLabel?.text = students[indexPath.row].name + " " + students[indexPath.row].surname
             
-            case .f:
+            case .femail:
                 studentCell = tableView.dequeueReusableCell(withIdentifier: XIBTableViewCell.id, for: indexPath)
                 studentCell.textLabel?.text = students[indexPath.row].name + " " + students[indexPath.row].surname
     //        case 2:

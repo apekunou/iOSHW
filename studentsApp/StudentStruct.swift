@@ -8,8 +8,8 @@
 
 import Foundation
 enum Gender {
-    case m
-    case f
+    case male
+    case femail
     case other
 }
 struct Student {

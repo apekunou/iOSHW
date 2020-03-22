@@ -5,7 +5,10 @@
 //  Created by Andrei Apekunou on 2/18/20.
 //  Copyright © 2020 Andrei Apekunou. All rights reserved.
 //
-
+//swiftlint:disable trailing_whitespace
+//swiftlint:disable vertical_whitespace
+//swiftlint:disable opening_brace
+//swiftlint:disable tatement_position
 import UIKit
 
 class CodeTableViewCell: UITableViewCell {

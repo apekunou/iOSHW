@@ -5,7 +5,10 @@
 //  Created by Andrei Apekunou on 2/18/20.
 //  Copyright © 2020 Andrei Apekunou. All rights reserved.
 //
-
+//swiftlint:disable trailing_whitespace
+//swiftlint:disable vertical_whitespace
+//swiftlint:disable opening_brace
+//swiftlint:disable tatement_position
 import UIKit
 
 class StudentsViewController: UIViewController, UITableViewDelegate { //UITableViewDataSource
@@ -61,7 +64,7 @@ class StudentsViewController: UIViewController, UITableViewDelegate { //UITableV
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(identifier:"ProfileViewController") as? ProfileViewController {
-            vc.login = loginText
+          //  vc.login = loginText
             let st = students[indexPath.row]
             vc.firstName = st.name
             vc.secondName = st.surname
@@ -86,6 +89,7 @@ class StudentsViewController: UIViewController, UITableViewDelegate { //UITableV
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //students = prepareArray()
+        loginText = ProfileManager.shared.login
         students = studentData.students
         tableView.dataSource = studentData
         tableView.register(CodeTableViewCell.self, forCellReuseIdentifier: CodeTableViewCell.id)

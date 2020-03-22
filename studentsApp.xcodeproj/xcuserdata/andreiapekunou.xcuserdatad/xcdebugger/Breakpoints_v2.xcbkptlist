@@ -14,8 +14,8 @@
             filePath = "studentsApp/StudentsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "StudentsViewController"
             landmarkType = "3">
             <Locations>
@@ -92,8 +92,8 @@
             filePath = "studentsApp/StudentsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -108,10 +108,10 @@
             filePath = "studentsApp/CodeTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "init(style:reuseIdentifier:)"
-            landmarkType = "7">
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "CodeTableViewCell"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -124,8 +124,8 @@
             filePath = "studentsApp/StudentsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "StudentsViewController"
             landmarkType = "3">
          </BreakpointContent>
