@@ -12,6 +12,9 @@
 import UIKit
 
 class StudentsViewController: UIViewController, UITableViewDelegate { //UITableViewDataSource
+   
+    var collectionView:UICollectionView
+    var cellID = "cell"
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,6 +22,13 @@ class StudentsViewController: UIViewController, UITableViewDelegate { //UITableV
     var loginText = ""
     
     var students: [Student] = []
+    
+    required init?(coder: NSCoder) {
+        let layout = UICollectionViewFlowLayout()
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+       // layout.itemSize = CGSize(width:350, height: 50)
+        super.init(coder:coder)
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -94,6 +104,18 @@ class StudentsViewController: UIViewController, UITableViewDelegate { //UITableV
         tableView.dataSource = studentData
         tableView.register(CodeTableViewCell.self, forCellReuseIdentifier: CodeTableViewCell.id)
         tableView.register(UINib(nibName: "XIBTableViewCell", bundle: nil), forCellReuseIdentifier: XIBTableViewCell.id)
+        
+        view.addSubview(collectionView)
+        collectionView.register(CodeCollectionViewCell.self, forCellWithReuseIdentifier: CodeCollectionViewCell.id)
+        collectionView.dataSource = studentData
+        collectionView.delegate = self
+        collectionView.backgroundColor = .purple
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        
     }
     
 //    func prepareArray() -> [Student] {
@@ -138,4 +160,37 @@ class StudentsViewController: UIViewController, UITableViewDelegate { //UITableV
     }
     */
 
+}
+
+//extension StudentsViewController:UICollectionViewDataSource {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        119
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CodeCollectionViewCell.id, for: indexPath)
+//       // cell.backgroundColor = .systemPink
+//        return cell
+//
+//    }
+//}
+
+extension StudentsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.row % 2 == 0 {
+            return CGSize(width: 350, height: 100)
+        } else {
+            return CGSize(width: 350, height: 100)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(identifier:"ProfileViewController") as? ProfileViewController {
+          //  vc.login = loginText
+            let st = students[indexPath.row]
+            vc.firstName = st.name
+            vc.secondName = st.surname
+            navigationController?.pushViewController(vc,animated: true)
+        }
+    }
 }

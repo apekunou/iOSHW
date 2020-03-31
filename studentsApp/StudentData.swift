@@ -49,8 +49,10 @@ class StudentData: NSObject, UITableViewDataSource{
                       default:
                         gender = .other
                     }
-                     students.append(Student(name: name, surname: surname, gender: gender))
+                    // students.append(Student(name: name, surname: surname, gender: gender))
                 }
+        //NetworkManager.shared.fetchData(urlSuffix: 1)
+        students = NetworkManager.shared.swPeople
     }
     
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -130,4 +132,30 @@ extension StudentData{
             }
             return studentCell
         }
+}
+
+extension StudentData:UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.students.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let st = students[indexPath.row]
+        
+        let cellDef = collectionView.dequeueReusableCell(withReuseIdentifier: CodeCollectionViewCell.id, for: indexPath)
+        
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CodeCollectionViewCell.id, for: indexPath) as? CodeCollectionViewCell{
+            cell.textLabel?.text = st.name + " " + st.surname
+            return cell
+        }
+            else{
+                
+        }
+       // cell.backgroundColor = .systemPink
+        //let custCell:CodeCollectionViewCell
+        //custCell = cell as! CodeCollectionViewCell
+        //custCell.textLabel?.text = st.name + " " + st.surname
+       // cell.textLabel?.text = st.name + " " + st.surname
+        return cellDef
+    }
 }

@@ -28,6 +28,8 @@ class AuthorizationViewController: UIViewController {
     
     @IBAction func animationButtonPressed(_ sender: Any) {
         
+        NetworkManager.shared.fetchData(urlSuffix: 1)
+        
         if buttonAnimationType > 2
         { buttonAnimationType = 0 }
         
@@ -80,14 +82,16 @@ class AuthorizationViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+      
       let navigationController = segue.destination as? UINavigationController
       let distinationViewController = navigationController?.viewControllers.first as? MenueViewController
         //  distinationViewController?.loginText = loginTextField.text ?? ""
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NetworkManager.shared.fetchData(urlSuffix: 1)
 //        animationButton.translatesAutoresizingMaskIntoConstraints = false
 //        animationButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
 //        animationButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
