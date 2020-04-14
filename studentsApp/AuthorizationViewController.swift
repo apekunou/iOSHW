@@ -17,6 +17,7 @@ class AuthorizationViewController: UIViewController {
     var animationView = UIView(frame: CGRect(x:100, y:100, width: 100, height: 100) )
     var verticalPosition: NSLayoutConstraint?
     var buttonAnimationType = 0
+    let gestureImageView = UIImageView(frame: CGRect(x: 120, y: 600, width: 150, height: 150))
 
     @IBOutlet weak var passwordTextFiled: UITextField!
     
@@ -108,7 +109,28 @@ class AuthorizationViewController: UIViewController {
 //        animationView.widthAnchor.constraint(equalToConstant: 150).isActive = true
 //        animationView.heightAnchor.constraint(equalToConstant: 150).isActive = true
         // Do any additional setup after loading the view.
-        incorrectPassword.isHidden = true
+//        incorrectPassword.isHidden = true
+          view.addSubview(gestureImageView)
+          gestureImageView.backgroundColor = .red
+          gestureImageView.isUserInteractionEnabled = true
+          let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(pinchGesture(sender:)))
+          gestureImageView.addGestureRecognizer(pinchGesture)
+    }
+    
+    @objc func pinchGesture(sender: UIPinchGestureRecognizer) {
+        guard let gestView = sender.view else { return }
+        gestView.transform = gestView.transform.scaledBy(x: sender.scale, y: sender.scale)
+        sender.scale = 1
+        
+    }
+    
+    @objc func panGesture(sender: UIPanGestureRecognizer) {
+        guard let movableView = sender.view else { return }
+        let translation = sender.translation(in: sender.view?.superview)
+        if sender.state == .began || sender.state == .changed {
+                movableView.center = CGPoint(x: movableView.center.x + translation.x, y: movableView.center.y + translation.y)
+                sender.setTranslation(.zero, in: sender.view?.superview)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

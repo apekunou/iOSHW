@@ -8,10 +8,11 @@
 
 import Foundation
 
-class NetworkManager {
+  class NetworkManager {
 
-    static let shared = NetworkManager()
-    public var swPeople: [Student] = []
+  static let shared = NetworkManager()
+
+    var swPeople: [Student] = []
     
     func fetchData(urlSuffix: Int) {
         //var urlSuffix:Int = 1
@@ -68,3 +69,4 @@ struct SWPeople:Codable {
 struct SWChar: Codable {
     let name: String
 }
+

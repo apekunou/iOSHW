@@ -52,6 +52,7 @@ class StudentData: NSObject, UITableViewDataSource{
                     // students.append(Student(name: name, surname: surname, gender: gender))
                 }
         //NetworkManager.shared.fetchData(urlSuffix: 1)
+      
         students = NetworkManager.shared.swPeople
     }
     
@@ -151,6 +152,9 @@ extension StudentData:UICollectionViewDataSource {
             else{
                 
         }
+//        DispatchQueue.main.async {
+//                       collectionView.reloadData()
+//                       }
        // cell.backgroundColor = .systemPink
         //let custCell:CodeCollectionViewCell
         //custCell = cell as! CodeCollectionViewCell
